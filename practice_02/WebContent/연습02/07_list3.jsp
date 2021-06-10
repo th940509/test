@@ -31,10 +31,11 @@
 		// 데이터 베이스 연동  *import 해야함.
 		conn = DriverManager.getConnection(jdbcUrl , dbId , dbPass);
 		
-		pstmt = conn.prepareStatement("selet * from member");
+		pstmt = conn.prepareStatement("select * from member");
 		rs = pstmt.executeQuery();
 			
 	%>
+		<h2>회원리스트</h2>
 		<table border="1">
 			<tr>
 				<th>ID</th>
@@ -49,12 +50,21 @@
 				String id = rs.getString("id");
 				String passwd = rs.getString("passwd");
 				String name = rs.getString("name");
-				String joindate = sdf.format(rs.getTimestamp("jaindate"));
+				String joindate = sdf.format(rs.getTimestamp("joindate"));
+	%>
+			<tr>
+				<td><%=id %></td>
+				<td><%=passwd %></td>
+				<td><%=name %></td>
+				<td><%=joindate %></td>
+			</tr>
+	<%
 			}
-		
-	%>	</table>
+	%>
+	
+		</table>
 			
-		
+	<%
 		
 	}catch(Exception e){
 		e.printStackTrace();
@@ -63,6 +73,6 @@
 		pstmt.close();
 		conn.close();
 	}
-%>
+	%>
 </body>
 </html>
