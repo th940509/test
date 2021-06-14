@@ -1,5 +1,5 @@
-<%@page import="practice_02.MemberDTO"%>
-<%@page import="practice_02.MemberDAO"%>
+<%@page import="연습03.MemberDTO"%>
+<%@page import="연습03.MemberDAO"%>
 <%@page import="sun.security.jca.GetInstance"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>

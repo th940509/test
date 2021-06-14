@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>insert</title>
+<title>join</title>
 </head>
 <body>
 	<h2>join form</h2>

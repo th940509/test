@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>main</title>
 </head>
 <body>
 	<p><a href="01_insert3.jsp">회원가입</a></p>

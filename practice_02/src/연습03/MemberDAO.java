@@ -1,4 +1,4 @@
-package practice_02;
+package 연습03;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -102,7 +102,7 @@ public class MemberDAO { // 데이터 접근 객체
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
-				pstmt = conn.prepareStatement("delete form member whrere id=?");
+				pstmt = conn.prepareStatement("delete from member where id=?");
 				pstmt.setString(1, id);
 				pstmt.executeUpdate();
 				isLeaveMember = true;
@@ -115,6 +115,34 @@ public class MemberDAO { // 데이터 접근 객체
 			if(conn != null)  try {conn.close();}  catch (SQLException e) {e.printStackTrace();}
 		}
 		return isLeaveMember;
+	}
+	
+	//update DAO
+	public boolean updateMember(MemberDTO mdto) {
+		boolean isUpdateMember = false;
+		
+		try {
+			conn = getConnection();
+			pstmt = conn.prepareStatement("select * from member where id=? and passwd=?");
+			pstmt.setString(1, mdto.getId());
+			pstmt.setString(2, mdto.getPasswd());
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				pstmt = conn.prepareStatement("update member set name=? where id=?");
+				pstmt.setString(1, mdto.getName());
+				pstmt.setString(2, mdto.getId());
+				pstmt.executeUpdate();
+				isUpdateMember = true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if(rs!=null)    try {rs.close();} catch (Exception e) {e.printStackTrace();}
+			if(pstmt!=null) try {pstmt.close();} catch (Exception e) {e.printStackTrace();}
+			if(conn!=null)  try {conn.close();} catch (Exception e) {e.printStackTrace();}
+		}
+		return isUpdateMember;
 	}
 	
 

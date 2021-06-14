@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>delete 회원탈퇴</title>
+<title>delete 회원탈퇴2</title>
 </head>
 <body>
 	<%

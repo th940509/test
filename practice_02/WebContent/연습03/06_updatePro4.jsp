@@ -1,26 +1,26 @@
 <%@page import="연습03.MemberDAO"%>
+<%@page import="연습03.MemberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>deletePro</title>
+<title>updatePro</title>
 </head>
 <body>
 	<%
 		request.setCharacterEncoding("utf-8");
-	
+		
 		String id = request.getParameter("id");
-		String passwd = request.getParameter("pwd");
+		String pwd = request.getParameter("pwd");
+		String name = request.getParameter("name");
 		
-		boolean isLeave = MemberDAO.getInstance().leaveMember(id, passwd);
+		boolean isUpdate = MemberDAO.getInstance().updateMember(new MemberDTO(id,pwd,name));
 		
-		if(isLeave) {
-			session.invalidate(); //세션삭제
-			
+		if(isUpdate) {
 	%>
 			<script>
-				alert("your account has been deleted successfully");
+				alert("Information has changed");
 				location.href="00_main4.jsp";
 			</script>
 	<%
@@ -28,11 +28,10 @@
 		else {
 	%>
 			<script>
-				alert("check your id or password");
+				alert("Check your Id and Password");
 				history.go(-1);
 			</script>
 	<%
-			
 		}
 	%>
 </body>

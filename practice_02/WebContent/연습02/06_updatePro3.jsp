@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>update 회원정보 수정</title>
+<title>update 회원정보 수정2</title>
 </head>
 <body>
 	<%
