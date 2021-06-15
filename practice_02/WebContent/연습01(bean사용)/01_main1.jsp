@@ -27,6 +27,6 @@
 
 --%>
 	<img src="../img/jsp.PNG" alt="jsp심볼" width="400px" height="200px"><br><br><br><br>
-	<input type="button" value="게시판보기" onclick="location.href='04_bList.jsp'">  					<!-- onclick 버튼을 클릭하면 실행되는 함수(inputFormEx12) -->
+	<input type="button" value="게시판보기" onclick="location.href='04_bList1.jsp'">  					<!-- onclick 버튼을 클릭하면 실행되는 함수(inputFormEx12) -->
 </body>
 </html>

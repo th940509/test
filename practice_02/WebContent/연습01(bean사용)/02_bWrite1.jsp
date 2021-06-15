@@ -6,7 +6,7 @@
 <title>02_bWrite</title>
 </head>
 <body>
-	<form method="post" action="03_bWrtiePro1.jsp">
+	<form method="post" action="03_bWritePro1.jsp">
 		<h2>게시글 쓰기</h2>
 		<table style="width:700px" border="1">
 			<colgroup> <!-- td에 적용(열에 적용) -->
@@ -36,7 +36,7 @@
 		</table>
 		<p>
 		<input type="submit" value="글쓰기"/>
-		<input type="button" onclick="location.href='04_bList.jsp'" value="전체게시글보기">
+		<input type="button" onclick="location.href='04_bList1.jsp'" value="전체게시글보기">
 		</p>
 	</form>
 </body>
